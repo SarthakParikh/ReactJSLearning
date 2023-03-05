@@ -7,8 +7,11 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
 
-  const onClickHandeller = () => {
+  const onClickHandeller = (e) => {
+    e.preventDefault()
     dispatch(addData({ name: name, email: mail, id: shortid.generate() }));
+
+
   };
 
   return (

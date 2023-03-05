@@ -1,14 +1,18 @@
-const dataReducer =(state,action)=>{
-console.log(state,action,"Data Reducer");
+const is = {}
+export const dataReducer = (state = is, action) => {
+  console.log(state, action, "Data Reducer");
 
-
-    switch (action.type) {
-        case "addData":
-            
-            break;
-    
-        default:
-            break;
+  switch (action.type) {
+    case "addData":{
+        console.log(action, "data reducer");
+        return{
+            ...state,
+            data:[action.payload]
+        }
     }
-
-}
+      
+    
+    default:
+      return;
+  }
+};
