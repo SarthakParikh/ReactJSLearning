@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import { addData } from "../Action/addData";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import shortid from "shortid";
 const Contact = () => {
   const dispatch = useDispatch();
+  const selector = useSelector((state) => state.data);
+  console.log(selector+'selecter Data');
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
 
   const onClickHandeller = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch(addData({ name: name, email: mail, id: shortid.generate() }));
-
-
   };
 
   return (
     <div>
       Contact
       <form>
-      
         <input
           type="text"
           placeholder="Name"

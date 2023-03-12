@@ -1,8 +1,6 @@
 // export const addData = (data) => {
 //   console.log(data);
 
- 
-
 //   {
 //     type: "addData";
 
@@ -10,12 +8,8 @@
 //   }
 // };
 
+export const addData = (data) => ({
+  type: "addData",
 
-export const addData = (data) => (
-  
-    {
-      type: "addData",
-  
-      payload: data,
-    }
-  )
+  payload: data,
+});
